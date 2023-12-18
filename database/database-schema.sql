@@ -25,14 +25,25 @@ CREATE TABLE user_types(
   user_type VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+
 DROP TABLE IF EXISTS users;
 CREATE TABLE users(
   user_id int AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(50) NOT NULL,
-  last_name VARCHAR(50) NOT NULL,
+  username VARCHAR(50) NOT NULL,
   email VARCHAR(50) NOT NULL UNIQUE,
   password VARCHAR(500) NOT NULL,
-  user_type_id int NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_type_id) REFERENCES user_types(user_type_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS houses;
+CREATE TABLE houses(
+  house_id int AUTO_INCREMENT PRIMARY KEY,
+  house_name VARCHAR(50) NOT NULL,
+  location VARCHAR(50) NOT NULL UNIQUE,
+  property_type VARCHAR(50) NOT NULL,
+  no_of_bedrooms int NOT NULL,
+  no_of_bathrooms int NOT NULL
+  FOREIGN KEY (user_id) REFERENCES users(user_id)     
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
