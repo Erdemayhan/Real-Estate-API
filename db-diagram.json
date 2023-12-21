@@ -1,0 +1,148 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "name": "database.json",
+  "sources": [
+    {
+      "id": "98006620-7170-46c5-8740-3c9d395729a5",
+      "name": "database.json",
+      "kind": {
+        "kind": "JsonLocalFile",
+        "name": "database.json",
+        "size": 4777,
+        "modified": 1678724688831
+      },
+      "content": [],
+      "tables": [
+        {
+          "schema": "public",
+          "table": "migrations",
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "nullable": false,
+              "origins": [
+                {
+                  "id": "98006620-7170-46c5-8740-3c9d395729a5",
+                  "lines": []
+                }
+              ]
+            },
+            {
+              "name": "name",
+              "type": "varchar(255)",
+              "nullable": false,
+              "origins": [
+                {
+                  "id": "98006620-7170-46c5-8740-3c9d395729a5",
+                  "lines": []
+                }
+              ]
+            },
+            {
+              "name": "run_on",
+              "type": "datetime",
+              "nullable": false,
+              "origins": [
+                {
+                  "id": "98006620-7170-46c5-8740-3c9d395729a5",
+                  "lines": []
+                }
+              ]
+            }
+          ],
+          "uniques": [],
+          "primaryKey": {
+            "name": "migrations_pk",
+            "columns": [
+              "id"
+            ],
+            "origins": [
+              {
+                "id": "98006620-7170-46c5-8740-3c9d395729a5",
+                "lines": []
+              }
+            ]
+          },
+          "origins": [
+            {
+              "id": "98006620-7170-46c5-8740-3c9d395729a5",
+              "lines": []
+            }
+          ]
+        },
+        {
+          "schema": "public",
+          "table": "user_types",
+          "columns": [
+            {
+              "name": "user_type_id",
+              "type": "int(11)",
+              "nullable": false,
+              "origins": [
+                {
+                  "id": "98006620-7170-46c5-8740-3c9d395729a5",
+                  "lines": []
+                }
+              ]
+            },
+            {
+              "name": "user_type",
+              "type": "varchar(50)",
+              "nullable": false,
+              "origins": [
+                {
+                  "id": "98006620-7170-46c5-8740-3c9d395729a5",
+                  "lines": []
+                }
+              ]
+            }
+          ],
+          "uniques": [],
+          "primaryKey": {
+            "name": "user_types_pk",
+            "columns": [
+              "user_type_id"
+            ],
+            "origins": [
+              {
+                "id": "98006620-7170-46c5-8740-3c9d395729a5",
+                "lines": []
+              }
+            ]
+          },
+          "origins": [
+            {
+              "id": "98006620-7170-46c5-8740-3c9d395729a5",
+              "lines": []
+            }
+          ]
+        }
+      ],
+      "relations": [],
+      "createdAt": 1678741101893,
+      "updatedAt": 1678741101893
+    }
+  ],
+  "usedLayout": "initial layout",
+  "layouts": {
+    "initial layout": {
+      "canvas": {
+        "position": {
+          "left": -30.53125,
+          "top": -1.515625
+        },
+        "zoom": 1
+      },
+      "tables": [],
+      "createdAt": 1678741101893,
+      "updatedAt": 1678741806926
+    }
+  },
+  "settings": {
+    "defaultSchema": "public"
+  },
+  "createdAt": 1678741616995,
+  "updatedAt": 1678741616995,
+  "version": 2
+}

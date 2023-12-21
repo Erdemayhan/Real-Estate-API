@@ -16,41 +16,45 @@ INSERT INTO user_types (user_type_id, user_type)
 VALUES (1, "admin");
 INSERT INTO user_types (user_type_id, user_type)
 VALUES (2, "user");
+INSERT INTO user_types (user_type_id, user_type)
+VALUES (3, "agents");
 
-INSERT INTO users (user_id, first_name, last_name, email, password, user_type_id, created_at)
-VALUES (1, "Ahmet", "Akinsql", "ahmet@akinsql.com", ("dgkojngıjwepjfpıfjpjfqewpfqew"), 224), 1, "2020-11-20 12:00:00");
-INSERT INTO users (user_id, first_name, last_name, email, password, user_type_id, created_at)
-VALUES (2, "Joe", "Bloggs","joebloggs@gmail.com", ("ndsknsdflknsdfklnfkln"), 224), 2, "2020-11-20 12:00:00");
-INSERT INTO users (user_id, first_name, last_name, email, password, user_type_id, created_at)
-VALUES (3, "Jim", "Bloggs" , "jimbloggs@yahoo.com", ("jdsnsjdnfodsn"), 224), 2, "2020-11-20 12:00:00");
+-- Inserting multiple rows into property_statuses
+INSERT INTO property_statuses (property_status_id, property_status)
+VALUES 
+(1, "For Sale"),
+(2, "For rent"),
+(3, "sold"),
+(4, "rented"),
+(5, "NEW!");
 
+-- Inserting multiple rows into property_types
+INSERT INTO property_types (property_type_id, property_type)
+VALUES 
+(1, "apartment"),
+(2, "house"),
+(3, "villa"),
+(4, "land"),
+(5, "office"),
+(6, "semi-detached house"),
+(7, "penthouse"),
+(8, "dormitory");
 
-INSERT INTO users (user_id, username, email, password, created_at)
-VALUES (1, "Erdem Ayhan",  "ayhanerdem510@gmail.com", "sdnonoıwekrpkbplövsdpnoıhep","2023-12-16 12:00:00");
-INSERT INTO users (user_id, username, email, password, created_at)
-VALUES (2, "Hazan Serifli",  "hazanserifli@gmail.com", "sdnonoıwekrp21332pnoıhep","2023-12-16 12:00:00");
-INSERT INTO users (user_id, username, email, password, created_at)
-VALUES (3, "Faruk Sertbay",  "faruktsertbay@gmail.com", "sdnonoıwekr743lövsdpnoıhep","2023-12-16 12:00:00");
-INSERT INTO users (user_id, username, email, password, created_at)
-VALUES (4, "Ahmet Akinsel",  "ahmet@akinsql.com", "sdnonoıwekrpkb11sdpnoıhep","2023-12-16 12:00:00");
-INSERT INTO users (user_id, username, email, password, created_at)
-VALUES (5, "Muhammed Rajab",  "rajabM@gmail.com", "sdnonoıwe22lövsdpnoıhep","2023-12-16 12:00:00");
+-- Inserting rows into users (Assuming user_id is auto-incremented and removed it from the statements)
+INSERT INTO users (username, email, password, user_type_id, created_at)
+VALUES 
+("Erdem Ayhan", "ayhanerdem510@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 1, "2023-12-16 12:00:00"),
+("Hazan Serifli", "hazanserifli@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 3, "2023-12-16 12:00:00"),
+("Faruk Sertbay", "faruktsertbay@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 3, "2023-12-16 12:00:00"),
+("Ahmet Akinsel", "ahmet@akinsql.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
+("Muhammed Rajab", "rajabM@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00");
 
-
-INSERT INTO houses (house_id, house_name, location, property_type, no_of_bedrooms, no_of_bathrooms)
-VALUES (1, "House 1", "Girne", "Flat", 2, 1);
-INSERT INTO houses (house_id, house_name, location, property_type, no_of_bedrooms, no_of_bathrooms)
-VALUES (2, "House 2", "Magusa", "Detached", 3, 2);
-INSERT INTO houses (house_id, house_name, location, property_type, no_of_bedrooms, no_of_bathrooms)
-VALUES (3, "House 3", "Iskele", "Semi-Detached", 4, 3);
-INSERT INTO houses (house_id, house_name, location, property_type, no_of_bedrooms, no_of_bathrooms)
-VALUES (4, "House 4", "Güzelyurt", "Studio", 5, 4);
-INSERT INTO houses (house_id, house_name, location, property_type, no_of_bedrooms, no_of_bathrooms)
-VALUES (5, "House 5", "Lefkoşa", "Penthouse", 6, 5);
-
-/*
-User type istermiyiz ? 
-Neden xx fresh houses and users çıkmadı? (sadece migration ve user types çıktı)
-Passwordü nasıl hashleyeceğiz?
-house name silinsin mi ? 
-*/
+-- Inserting rows into properties (Assuming property_id is auto-incremented and removed it from the statements)
+INSERT INTO properties (property_id, user_id, property_type_id, property_status_id, description, location, size_sq_meters, no_of_bedrooms, no_of_bathrooms, no_of_rooms, price)
+VALUES 
+(1, 2, 2, 3, "A spacious villa in the suburbs", "Famagusta", 200.00, 4, 2, 6, 500000),
+(2, 3, 3, 4, "A cozy cottage in the countryside", "Nicosia", 150.00, 3, 2, 5, 300000),
+(3, 4, 4, 5, "A modern loft in the city center", "Kyrenia", 120.00, 2, 1, 3, 200000),
+(4, 5, 5, 6, "A luxurious penthouse with a city view", "Omorfou", 250.00, 4, 3, 7, 1000000),
+(5, 1, 1, 3, "A charming studio in the city center", "Limassol", 80.00, 1, 1, 2, 150000),
+(6, 2, 2, 4, "A comfortable flat in a quiet neighborhood", "Paphos", 90.00, 2, 1, 3, 200000);
