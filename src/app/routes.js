@@ -8,6 +8,8 @@ const authorise = require("./middlewares/authorisation");
 const getUserTypes = require("./controllers/users/userTypes");
 const { ADMIN } = require("~root/constants/userTypes");
 const getUsers = require("./controllers/users/getUsers");
+const getAllProperties = require("./controllers/properties/getAllProperties");
+const getPropertiesByTypeId = require("./controllers/properties/getPropertiesByTypeId");
 
 const router = express.Router();
 
@@ -25,5 +27,11 @@ router.put("/edit/user", authentication, putUserDetails);
 router.get("/user-types", getUserTypes);
 
 router.get("/users", getUsers);
+
+// Properties
+
+router.get("/properties", getAllProperties);
+
+router.get("/properties/:id", getPropertiesByTypeId);
 
 module.exports = router;

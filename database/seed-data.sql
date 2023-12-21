@@ -50,7 +50,7 @@ VALUES
 
 
 -- Inserting rows into properties (Assuming property_id is auto-incremented and removed it from the statements)
-INSERT INTO properties (property_id, user_id, property_type_id, property_status_id, description, location, size_sq_meters, no_of_bedrooms, no_of_bathrooms, no_of_rooms, price)
+INSERT INTO properties (property_id, user_id, property_type_id,  property_status_id, description, location, size_sq_meters, no_of_bedrooms, no_of_bathrooms, no_of_rooms, price)
 VALUES 
 (1, 1, 2, 3, "A spacious villa in the suburbs", "Famagusta", 200.00, 4, 2, 6, 500000),
 (2, 2, 3, 4, "A cozy cottage in the countryside", "Nicosia", 150.00, 3, 2, 5, 300000),
