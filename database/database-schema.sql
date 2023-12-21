@@ -69,3 +69,6 @@ CREATE TABLE properties(
   FOREIGN KEY (property_type_id) REFERENCES property_types(property_type_id),
   FOREIGN KEY (property_status_id) REFERENCES property_statuses(property_status_id)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+SELECT * FROM property_statuses;
