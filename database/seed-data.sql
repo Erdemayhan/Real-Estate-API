@@ -24,9 +24,8 @@ INSERT INTO property_statuses (property_status_id, property_status)
 VALUES 
 (1, "For Sale"),
 (2, "For rent"),
-(3, "sold"),
-(4, "rented"),
-(5, "NEW!");
+(3, "Off the market"),
+(4, "NEW!");
 
 -- Inserting multiple rows into property_types
 INSERT INTO property_types (property_type_id, property_type)
@@ -55,6 +54,6 @@ INSERT INTO properties (property_id, user_id, property_type_id, property_status_
 VALUES 
 (1, 1, 2, 3, "A spacious villa in the suburbs", "Famagusta", 200.00, 4, 2, 6, 500000),
 (2, 2, 3, 4, "A cozy cottage in the countryside", "Nicosia", 150.00, 3, 2, 5, 300000),
-(3, 3, 4, 5, "A modern loft in the city center", "Kyrenia", 120.00, 2, 1, 3, 200000),
-(4, 4, 5, 5, "A luxurious penthouse with a city view", "Omorfou", 250.00, 4, 3, 7, 1000000),
-(5, 5, 1, 3, "A charming studio in the city center", "Limassol", 80.00, 1, 1, 2, 150000)
+(3, 3, 4, 4, "A modern loft in the city center", "Kyrenia", 120.00, 2, 1, 3, 200000),
+(4, 4, 5, 1, "A luxurious penthouse with a city view", "Omorfou", 250.00, 4, 3, 7, 1000000),
+(5, 5, 1, 3, "A charming studio in the city center", "Limassol", 80.00, 1, 1, 2, 15000000)
