@@ -3,8 +3,9 @@ const { submitQuery, camelKeys, getFirst } = require("~root/lib/database");
 const selectUserById = ({ userId }) => submitQuery`
     SELECT 
         user_id,
-        first_name,
-        last_name,
+        user_name
+        email,
+        password,
         user_types.user_type_id,
         user_types.user_type
     FROM users
