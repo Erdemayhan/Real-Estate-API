@@ -5,11 +5,11 @@ const getPropertiesByTypeId = async (req, res) => {
   const { typeId } = req.params;
 
   try {
-    const { property } = await fetchPropertyByTypeId({
+    const { propertyType } = await fetchPropertyByTypeId({
       typeId
     });
     res.status(201).send({
-      property
+      propertyType
     });
   } catch (err) {
     handleAPIError(res, err);
