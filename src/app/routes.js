@@ -8,6 +8,7 @@ const authorise = require("./middlewares/authorisation");
 const getUserTypes = require("./controllers/users/userTypes");
 const { ADMIN } = require("~root/constants/userTypes");
 const getUsers = require("./controllers/users/getUsers");
+const getUserById = require("./controllers/users/getUserById");
 
 const router = express.Router();
 
@@ -25,5 +26,7 @@ router.put("/edit/user", authentication, putUserDetails);
 router.get("/user-types", getUserTypes);
 
 router.get("/users", getUsers);
+
+router.get("/user/:id", getUserById); // not working
 
 module.exports = router;
