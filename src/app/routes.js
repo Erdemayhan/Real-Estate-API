@@ -13,6 +13,8 @@ const getPropertiesByTypeId = require("./controllers/properties/getPropertiesByT
 const getPropertiesByStatusId = require("./controllers/properties/getPropertiesByStatusId");
 const getPropertiesByRooms = require("./controllers/properties/getPropertiesByRooms");
 const getPropertiesByBedrooms = require("./controllers/properties/getPropertiesByBedrooms");
+
+const getUserById = require("./controllers/users/getUserById");
 const getPropertiesByBathrooms = require("./controllers/properties/getPropertiesByBathrooms");
 
 const router = express.Router();
@@ -32,6 +34,8 @@ router.get("/user-types", getUserTypes);
 
 router.get("/users", getUsers);
 
+router.get("/users/:userId", getUserById);
+
 // Properties
 
 router.get("/properties", getAllProperties);
@@ -44,6 +48,5 @@ router.get("/properties/rooms/:rooms", getPropertiesByRooms);
 
 router.get("/properties/rooms/bedrooms/:bedrooms", getPropertiesByBedrooms);
 
-router.get("properties/rooms/bathrooms/:bathrooms", getPropertiesByBathrooms); // Henüz çalışmıyor!
-
+router.get("/properties/rooms/bathrooms/:bathrooms", getPropertiesByBathrooms);
 module.exports = router;

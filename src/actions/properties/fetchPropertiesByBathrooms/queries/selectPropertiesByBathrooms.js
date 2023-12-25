@@ -6,7 +6,6 @@ const selectPropertiesByBathrooms = ({ bathrooms }) => submitQuery`
         property_statuses.property_status,
         properties.location,
         properties.description,
-        properties.no_of_rooms,
         properties.no_of_bedrooms,
         properties.price
     FROM 
