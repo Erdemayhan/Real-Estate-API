@@ -46,7 +46,10 @@ VALUES
 (2, "Hazan Serifli", "hazanserifli@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 3, "2023-12-16 12:00:00"),
 (3, "Faruk Sertbay", "faruktsertbay@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 3, "2023-12-16 12:00:00"),
 (4, "Ahmet Akinsel", "ahmet@akinsql.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
-(5, "Muhammed Rajab", "rajabM@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00");
+(5, "Muhammed Rajab", "rajabM@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
+(6, "John Doe", "johndoe@example.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
+(7, "Fazile Sururi", "fazilesururi@example.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
+(8, "Ali Devecioglu", "alidevecioglu@example.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00");
 
 
 -- Inserting rows into properties (Assuming property_id is auto-incremented and removed it from the statements)

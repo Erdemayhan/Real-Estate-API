@@ -8,7 +8,9 @@ const authorise = require("./middlewares/authorisation");
 const getUserTypes = require("./controllers/users/userTypes");
 const { ADMIN } = require("~root/constants/userTypes");
 const getUsers = require("./controllers/users/getUsers");
+const getUserByName = require("./controllers/users/getUserByName");
 const getUserById = require("./controllers/users/getUserById");
+const getUserByTypeId = require("./controllers/users/getUserByTypeId");
 
 const router = express.Router();
 
@@ -27,6 +29,10 @@ router.get("/user-types", getUserTypes);
 
 router.get("/users", getUsers);
 
-router.get("/user/:id", getUserById); // not working
+router.get("/user/:userId", getUserById);
+
+router.get("/user/name/:usersName", getUserByName);
+
+router.get("/user/type/:userTypeId", getUserByTypeId);
 
 module.exports = router;
