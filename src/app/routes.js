@@ -19,6 +19,9 @@ const getPropertiesByBathrooms = require("./controllers/properties/getProperties
 const getUserByName = require("./controllers/users/getUserByName");
 const getPropertiesByDate = require("./controllers/properties/getPropertiesByDate");
 const getUserByTypeId = require("./controllers/users/getUsersByTypeId");
+const patchPropertyByDescription = require("./controllers/properties/patchPropertyByDescription");
+const patchUserByName = require("./controllers/users/patchUserByName");
+const patchPropertyStatusById = require("./controllers/properties/patchPropertyStatusById");
 
 const router = express.Router();
 
@@ -43,6 +46,8 @@ router.get("/user/name/:usersName", getUserByName);
 
 router.get("/user/type/:userTypeId", getUserByTypeId);
 
+router.patch("/users/name/:userId", patchUserByName);
+
 // Properties
 
 router.get("/properties", getAllProperties);
@@ -58,5 +63,9 @@ router.get("/properties/rooms/bedrooms/:bedrooms", getPropertiesByBedrooms);
 router.get("/properties/rooms/bathrooms/:bathrooms", getPropertiesByBathrooms);
 
 router.get("/properties/dates/:date", getPropertiesByDate); // date should come up with only month/year/day either one
+
+router.patch("/properties/description/:propertyId", patchPropertyByDescription);
+
+router.patch("/properties/status/:propertyId", patchPropertyStatusById);
 
 module.exports = router;
