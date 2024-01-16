@@ -22,6 +22,7 @@ const getUserByTypeId = require("./controllers/users/getUsersByTypeId");
 const patchPropertyByDescription = require("./controllers/properties/patchPropertyByDescription");
 const patchUserByName = require("./controllers/users/patchUserByName");
 const patchPropertyStatusById = require("./controllers/properties/patchPropertyStatusById");
+const deleteProperty = require("./controllers/properties/deleteProperty");
 
 const router = express.Router();
 
@@ -67,5 +68,7 @@ router.get("/properties/dates/:date", getPropertiesByDate); // date should come 
 router.patch("/properties/description/:propertyId", patchPropertyByDescription);
 
 router.patch("/properties/status/:propertyId", patchPropertyStatusById);
+
+router.delete("/property/:propertyId", deleteProperty);
 
 module.exports = router;
