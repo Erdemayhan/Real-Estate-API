@@ -25,6 +25,7 @@ router.get("/user-types", getUserTypes); // DONE
 
 router.get("/users", getUsers);
 
+
 module.exports = router;
 
 // router.get("/salla/gitsin/farketmez/:password", getAllPasswordsFromUsers);
