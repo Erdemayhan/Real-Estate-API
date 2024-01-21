@@ -13,10 +13,11 @@ const getUserById = require("./controllers/users/getUserById");
 const getUserByTypeId = require("./controllers/users/getUserByTypeId");
 const getUserByEmail = require("./controllers/users/getUserByEmail");
 const getUserByDate = require("./controllers/users/getUserByDate");
-const { de } = require("chrono-node");
+
 const deleteUserById = require("./controllers/users/deleteUserById");
 const patchUserByName = require("./controllers/users/patchUserByName");
 const patchUserByEmail = require("./controllers/users/patchUserByEmail");
+const postUserbyId = require("./controllers/users/postUserById");
 
 const router = express.Router();
 
@@ -50,5 +51,7 @@ router.delete("/user/:userId", deleteUserById);
 router.patch("/users/name/:userId", patchUserByName);
 
 router.patch("/users/email/:userId", patchUserByEmail);
+
+router.post("/user", postUserbyId); // not working
 
 module.exports = router;
