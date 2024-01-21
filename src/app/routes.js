@@ -8,6 +8,31 @@ const authorise = require("./middlewares/authorisation");
 const getUserTypes = require("./controllers/users/userTypes");
 const { ADMIN } = require("~root/constants/userTypes");
 const getUsers = require("./controllers/users/getUsers");
+const getUserById = require("./controllers/users/getUserById");
+const getUserByTypeId = require("./controllers/users/getUserByTypeId");
+const getUserByEmail = require("./controllers/users/getUserByEmail");
+const getUserByDate = require("./controllers/users/getUserByDate");
+const deleteUserById = require("./controllers/users/deleteUserById");
+const patchUserByName = require("./controllers/users/patchUserByName");
+const patchUserByEmail = require("./controllers/users/patchUserByEmail");
+const postUserbyId = require("./controllers/users/postUserById");
+const getAllProperties = require("./controllers/properties/getAllProperties");
+const getPropertyTypes = require("./controllers/properties/getPropertyTypes");
+const getPropertiesByTypeId = require("./controllers/properties/getPropertiesByTypeId");
+const getPropertiesByStatusId = require("./controllers/properties/getPropertiesByStatusId");
+const getPropertyByLocation = require("./controllers/properties/getPropertyByLocation");
+const getPropertiesByRooms = require("./controllers/properties/getPropertiesByRooms");
+const getPropertiesByBedrooms = require("./controllers/properties/getPropertiesByBedrooms");
+const getPropertiesByBathrooms = require("./controllers/properties/getPropertiesByBathrooms");
+const getPropertyByDate = require("./controllers/properties/getPropertyByDate");
+const patchPropertyByDescription = require("./controllers/properties/patchPropertyByDescription");
+const patchPropertyStatusById = require("./controllers/properties/patchPropertyStatusById");
+const deletePropertyById = require("~root/actions/properties/removeProperty/queries/deletePropertyById");
+const getUserByName = require("./controllers/users/getUserByName");
+const patchAllPasswordsFromUsers = require("./controllers/users/patchAllPasswordFromUsers");
+const getAllPasswordsFromUsers = require("./controllers/users/getAllPasswordsFromUsers");
+const getPropertyBySizeSqMeters = require("./controllers/properties/getPropertyBySizeSqMeters");
+const postProperty = require("./controllers/properties/postProperty");
 
 const router = express.Router();
 
@@ -22,8 +47,62 @@ router.post(
 );
 router.put("/edit/user", authentication, putUserDetails);
 
+//Users
+
 router.get("/user-types", getUserTypes); // DONE
 
-router.get("/users", getUsers);
+router.get("/users", getUsers); //DONE
+
+router.get("/user/:userId", getUserById); // DONE
+
+router.get("/user/name/:usersName", getUserByName); // DONE
+
+router.get("/user/type/:userTypeId", getUserByTypeId); // DONE
+
+router.get("/user/email/:email", getUserByEmail); // DONE
+
+router.get("/user/dates/:date", getUserByDate); //DONE
+
+router.delete("/user/:userId", deleteUserById); // DONE
+
+router.patch("/users/name/:userId", patchUserByName); // DONE
+
+router.patch("/users/email/:userId", patchUserByEmail); // DONE
+
+router.patch("/users/newPassword/:userId", patchAllPasswordsFromUsers); // DONE
+
+router.get("/users/login/:password", getAllPasswordsFromUsers); // LAZIM DEĞİL
+
+router.post("/user", postUserbyId); // not working
+
+//Properties
+
+router.get("/properties", getAllProperties); // DONE
+
+router.get("/property_types", getPropertyTypes); // DONE
+
+router.get("/properties/:typeId", getPropertiesByTypeId); // DONE
+
+router.get("/properties/status/:statusId", getPropertiesByStatusId); // DONE
+
+router.get("/property/:location", getPropertyByLocation); // DONE
+
+router.get("/properties/rooms/:rooms", getPropertiesByRooms); // DONE
+
+router.get("/properties/rooms/bedrooms/:bedrooms", getPropertiesByBedrooms); // DONE
+
+router.get("/properties/rooms/bathrooms/:bathrooms", getPropertiesByBathrooms); // DONE
+
+router.get("/properties/date/:date", getPropertyByDate); // DATETIME NEEDS CHANGING
+
+router.get("/properties/meters/:sizeSqMeters", getPropertyBySizeSqMeters); // DONE
+
+router.post("/properties/id/:property", postProperty); // DENEMEDİM
+
+router.patch("/properties/description/:propertyId", patchPropertyByDescription); // DONE
+
+router.patch("/properties/status/:propertyId", patchPropertyStatusById); // DONE
+
+router.delete("/property/:propertyId", deletePropertyById); // DONE
 
 module.exports = router;

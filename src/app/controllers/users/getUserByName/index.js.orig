@@ -5,14 +5,7 @@ const getUserByName = async (req, res) => {
   const { usersName } = req.params;
 
   try {
-<<<<<<< HEAD
-    const { user } = await fetchUserByName({
-      usersName
-    });
-
-=======
     const { user } = await fetchUserByName({ usersName });
->>>>>>> origin/combinedAPI
     res.status(201).send({
       user
     });
