@@ -47,11 +47,11 @@ router.post(
 );
 router.put("/edit/user", authentication, putUserDetails);
 
-//Users
+// Users
 
 router.get("/user-types", getUserTypes); // DONE
 
-router.get("/users", getUsers); //DONE
+router.get("/users", getUsers); // DONE
 
 router.get("/user/:userId", getUserById); // DONE
 
@@ -61,7 +61,7 @@ router.get("/user/type/:userTypeId", getUserByTypeId); // DONE
 
 router.get("/user/email/:email", getUserByEmail); // DONE
 
-router.get("/user/dates/:date", getUserByDate); //DONE
+router.get("/user/dates/:date", getUserByDate); // DONE
 
 router.delete("/user/:userId", deleteUserById); // DONE
 
@@ -75,7 +75,7 @@ router.get("/users/login/:password", getAllPasswordsFromUsers); // LAZIM DEĞİL
 
 router.post("/user", postUserbyId); // not working
 
-//Properties
+// Properties
 
 router.get("/properties", getAllProperties); // DONE
 
