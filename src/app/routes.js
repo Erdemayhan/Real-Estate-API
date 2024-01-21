@@ -13,16 +13,17 @@ const getPropertiesByTypeId = require("./controllers/properties/getPropertiesByT
 const getPropertiesByStatusId = require("./controllers/properties/getPropertiesByStatusId");
 const getPropertiesByRooms = require("./controllers/properties/getPropertiesByRooms");
 const getPropertiesByBedrooms = require("./controllers/properties/getPropertiesByBedrooms");
-
 const getUserById = require("./controllers/users/getUserById");
 const getPropertiesByBathrooms = require("./controllers/properties/getPropertiesByBathrooms");
 const getUserByName = require("./controllers/users/getUserByName");
-const getPropertiesByDate = require("./controllers/properties/getPropertiesByDate");
 const getUserByTypeId = require("./controllers/users/getUsersByTypeId");
 const patchPropertyByDescription = require("./controllers/properties/patchPropertyByDescription");
 const patchUserByName = require("./controllers/users/patchUserByName");
 const patchPropertyStatusById = require("./controllers/properties/patchPropertyStatusById");
 const deleteProperty = require("./controllers/properties/deleteProperty");
+const getPropertyByLocation = require("./controllers/properties/getPropertyByLocation");
+const getPropertyTypes = require("./controllers/properties/getPropertyTypes");
+const getPropertyByDate = require("./controllers/properties/getPropertyByDate");
 
 const router = express.Router();
 
@@ -37,38 +38,42 @@ router.post(
 );
 router.put("/edit/user", authentication, putUserDetails);
 
-router.get("/user-types", getUserTypes);
+router.get("/user-types", getUserTypes); // DONE
 
-router.get("/users", getUsers);
+router.get("/users", getUsers); // DONE
 
-router.get("/users/:userId", getUserById);
+router.get("/users/:userId", getUserById); // DONE
 
-router.get("/user/name/:usersName", getUserByName);
+router.get("/user/name/:usersName", getUserByName); // DONE
 
-router.get("/user/type/:userTypeId", getUserByTypeId);
+router.get("/user/type/:userTypeId", getUserByTypeId); // DONE
 
-router.patch("/users/name/:userId", patchUserByName);
+router.patch("/users/name/:userId", patchUserByName); // DONE
 
 // Properties
 
-router.get("/properties", getAllProperties);
+router.get("/properties", getAllProperties); // DONE
 
-router.get("/properties/:typeId", getPropertiesByTypeId);
+router.get("/property_types", getPropertyTypes); // DONE
 
-router.get("/properties/status/:statusId", getPropertiesByStatusId);
+router.get("/properties/:typeId", getPropertiesByTypeId); // DONE
 
-router.get("/properties/rooms/:rooms", getPropertiesByRooms);
+router.get("/properties/status/:statusId", getPropertiesByStatusId); // DONE
 
-router.get("/properties/rooms/bedrooms/:bedrooms", getPropertiesByBedrooms);
+router.get("/property/:location", getPropertyByLocation); // DONE
 
-router.get("/properties/rooms/bathrooms/:bathrooms", getPropertiesByBathrooms);
+router.get("/properties/rooms/:rooms", getPropertiesByRooms); // DONE
 
-router.get("/properties/dates/:date", getPropertiesByDate); // date should come up with only month/year/day either one
+router.get("/properties/rooms/bedrooms/:bedrooms", getPropertiesByBedrooms); // DONE
 
-router.patch("/properties/description/:propertyId", patchPropertyByDescription);
+router.get("/properties/rooms/bathrooms/:bathrooms", getPropertiesByBathrooms); // DONE
 
-router.patch("/properties/status/:propertyId", patchPropertyStatusById);
+router.get("/properties/date/:date", getPropertyByDate); // DATETIME NEEDS CHANGING
 
-router.delete("/property/:propertyId", deleteProperty);
+router.patch("/properties/description/:propertyId", patchPropertyByDescription); // DONE
+
+router.patch("/properties/status/:propertyId", patchPropertyStatusById); // DONE
+
+router.delete("/property/:propertyId", deleteProperty); // DONE
 
 module.exports = router;
