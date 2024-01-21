@@ -38,7 +38,6 @@ CREATE TABLE property_types(
   property_type VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Ensure to create property_rent_types table similarly if it is required
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users(
@@ -55,7 +54,7 @@ DROP TABLE IF EXISTS properties;
 CREATE TABLE properties(
   property_id int AUTO_INCREMENT PRIMARY KEY,
   user_id int,
-  property_type_id int,
+  property_type_id int, 
   property_status_id int,
   description VARCHAR(500) NOT NULL,
   location VARCHAR(50) NOT NULL UNIQUE,
