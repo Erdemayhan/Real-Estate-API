@@ -1,0 +1,37 @@
+const { submitQuery, sql, sqlReduce } = require("~root/lib/database");
+
+const updateUserByName = ({ userId, name = null }) => {
+  const updates = [];
+
+  if (name !== null) {
+<<<<<<< HEAD
+    updates.push(sql`username= ${name}`);
+=======
+    updates.push(sql`username = ${name}`);
+>>>>>>> origin/combinedAPI
+  }
+
+  if (updates.length !== 0) {
+    return submitQuery`
+<<<<<<< HEAD
+        UPDATE
+        users
+      SET
+        ${updates.reduce(sqlReduce)}
+      WHERE
+        user_id = ${userId};
+        `;
+=======
+    UPDATE 
+      users
+    SET
+      ${updates.reduce(sqlReduce)}
+    WHERE
+      user_id = ${userId};
+  `;
+>>>>>>> origin/combinedAPI
+  }
+  return Promise.resolve();
+};
+
+module.exports = updateUserByName;

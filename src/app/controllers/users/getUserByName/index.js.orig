@@ -1,0 +1,24 @@
+const fetchUserByName = require("~root/actions/users/fetchUserByName");
+const handleAPIError = require("~root/utils/handleAPIError");
+
+const getUserByName = async (req, res) => {
+  const { usersName } = req.params;
+
+  try {
+<<<<<<< HEAD
+    const { user } = await fetchUserByName({
+      usersName
+    });
+
+=======
+    const { user } = await fetchUserByName({ usersName });
+>>>>>>> origin/combinedAPI
+    res.status(201).send({
+      user
+    });
+  } catch (err) {
+    handleAPIError(res, err);
+  }
+};
+
+module.exports = getUserByName;

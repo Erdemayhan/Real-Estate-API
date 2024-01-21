@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+const { submitQuery, camelKeys } = require("~root/lib/database");
+
+const selectUserByName = ({ usersName }) => submitQuery`
+SELECT user_id, email,user_type_id
+FROM users
+WHERE username LIKE CONCAT('%',${usersName},'%')
+    
+`;
+=======
+/* eslint-disable prefer-template */
+const { submitQuery, camelKeys } = require("~root/lib/database");
+
+const selectUserByName = ({ usersName }) => submitQuery`
+    SELECT email, user_id, username
+    FROM users
+    WHERE username LIKE ${"%" + usersName + "%"}
+    `;
+>>>>>>> origin/combinedAPI
+
+module.exports = camelKeys(selectUserByName);
