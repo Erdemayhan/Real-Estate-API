@@ -57,7 +57,7 @@ CREATE TABLE properties(
   property_type_id int, 
   property_status_id int,
   description VARCHAR(500) NOT NULL,
-  location VARCHAR(50) NOT NULL UNIQUE,
+  location VARCHAR(50) NOT NULL,
   size_sq_meters DECIMAL(10, 2),
   price int NOT NULL,
   no_of_rooms int NOT NULL,

@@ -1,39 +1,38 @@
 const createProperty = require("~root/actions/properties/createProperty");
+const handleAPIError = require("~root/utils/handleAPIError");
 
 const postProperty = async (req, res) => {
   const {
-    propertyId,
-    userId,
-    propertyTypeId,
-    propertyStatusId,
     description,
     location,
     sizeSqMeters,
-    numberOfRooms,
-    numberOfBedrooms,
-    numberOfBathrooms,
     price,
-    listedDate
+    noOfRooms,
+    noOfBedrooms,
+    noOfBathrooms,
+    propertyTypeId,
+    propertyStatusId
   } = req.body;
 
-  const { properties } = await createProperty({
-    propertyId,
-    userId,
-    propertyTypeId,
-    propertyStatusId,
-    description,
-    location,
-    sizeSqMeters,
-    numberOfRooms,
-    numberOfBedrooms,
-    numberOfBathrooms,
-    price,
-    listedDate
-  });
+  try {
+    const { property } = await createProperty({
+      description,
+      location,
+      sizeSqMeters,
+      price,
+      noOfRooms,
+      noOfBedrooms,
+      noOfBathrooms,
+      propertyTypeId,
+      propertyStatusId
+    });
 
-  res.status(201).send(properties);
-
-  return properties;
+    res.status(201).send({
+      property
+    });
+  } catch (err) {
+    handleAPIError(res, err);
+  }
 };
 
 module.exports = postProperty;

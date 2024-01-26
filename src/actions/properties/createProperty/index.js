@@ -1,35 +1,36 @@
 const insertProperty = require("./queries/insertProperty");
 
 const createProperty = async ({
-  propertyId,
-  userId,
-  propertyTypeId,
-  propertyStatusId,
   description,
   location,
   sizeSqMeters,
-  numberOfRooms,
-  numberOfBedrooms,
-  numberOfBathrooms,
   price,
-  listedDate
+  noOfRooms,
+  noOfBedrooms,
+  noOfBathrooms,
+  propertyTypeId,
+  propertyStatusId
 }) => {
   const property = await insertProperty({
-    propertyId,
-    userId,
-    propertyTypeId,
-    propertyStatusId,
     description,
     location,
     sizeSqMeters,
-    numberOfRooms,
-    numberOfBedrooms,
-    numberOfBathrooms,
     price,
-    listedDate
+    noOfRooms,
+    noOfBedrooms,
+    noOfBathrooms,
+    propertyTypeId,
+    propertyStatusId
   });
-
   return { property };
 };
 
 module.exports = createProperty;
+
+/*  description,
+    location,
+    sizeSqMeters,
+    price,
+    noOfRooms,
+    noOfBedrooms,
+    noOfBathrooms */

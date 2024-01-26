@@ -15,7 +15,6 @@ const getUserByDate = require("./controllers/users/getUserByDate");
 const deleteUserById = require("./controllers/users/deleteUserById");
 const patchUserByName = require("./controllers/users/patchUserByName");
 const patchUserByEmail = require("./controllers/users/patchUserByEmail");
-const postUserbyId = require("./controllers/users/postUserById");
 const getAllProperties = require("./controllers/properties/getAllProperties");
 const getPropertyTypes = require("./controllers/properties/getPropertyTypes");
 const getPropertiesByTypeId = require("./controllers/properties/getPropertiesByTypeId");
@@ -33,6 +32,7 @@ const patchAllPasswordsFromUsers = require("./controllers/users/patchAllPassword
 const getAllPasswordsFromUsers = require("./controllers/users/getAllPasswordsFromUsers");
 const getPropertyBySizeSqMeters = require("./controllers/properties/getPropertyBySizeSqMeters");
 const postProperty = require("./controllers/properties/postProperty");
+const getPropertyStatuses = require("./controllers/properties/getPropertyStatuses");
 
 const router = express.Router();
 
@@ -48,8 +48,7 @@ router.post(
 router.put("/edit/user", authentication, putUserDetails);
 
 // Users
-
-router.get("/user-types", getUserTypes); // DONE
+router.get("/user_types", getUserTypes); // DONE
 
 router.get("/users", getUsers); // DONE
 
@@ -73,8 +72,6 @@ router.patch("/users/newPassword/:userId", patchAllPasswordsFromUsers); // DONE
 
 router.get("/users/login/:password", getAllPasswordsFromUsers); // LAZIM DEĞİL
 
-router.post("/user", postUserbyId); // not working
-
 // Properties
 
 router.get("/properties", getAllProperties); // DONE
@@ -97,12 +94,16 @@ router.get("/properties/date/:date", getPropertyByDate); // DATETIME NEEDS CHANG
 
 router.get("/properties/meters/:sizeSqMeters", getPropertyBySizeSqMeters); // DONE
 
-router.post("/properties/id/:property", postProperty); // DENEMEDİM
+router.get("/property_statuses", getPropertyStatuses);
+
+router.post("/property", postProperty); // DONE
 
 router.patch("/properties/description/:propertyId", patchPropertyByDescription); // DONE
 
 router.patch("/properties/status/:propertyId", patchPropertyStatusById); // DONE
 
 router.delete("/property/:propertyId", deletePropertyById); // DONE
+
+// Filtering
 
 module.exports = router;

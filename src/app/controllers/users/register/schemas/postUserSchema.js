@@ -2,16 +2,11 @@ const yup = require("yup");
 const selectUserByEmail = require("./queries/selectUserById");
 
 const postUserSchema = yup.object().shape({
-  firstName: yup
+  username: yup
     .string()
     .required()
-    .label("First Name")
-    .typeError("First Name must be a number."),
-  lastName: yup
-    .string()
-    .required()
-    .label("Last Name")
-    .typeError("Last Name must be a number."),
+    .label("Username")
+    .typeError("Username must be a number."),
   password: yup
     .string()
     .min(8)
