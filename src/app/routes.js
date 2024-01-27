@@ -73,7 +73,7 @@ router.patch("/users/newPassword/:userId", patchAllPasswordsFromUsers); // DONE
 
 router.get("/users/login/:password", getAllPasswordsFromUsers); // LAZIM DEĞİL
 
-router.post("/user", postUserbyId); // not working
+router.post("/users/register", postUserbyId); // not working
 
 //Properties
 
