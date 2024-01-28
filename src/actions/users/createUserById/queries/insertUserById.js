@@ -1,4 +1,4 @@
-const { submitQuery, camelKeys } = require("~root/lib/database");
+const { submitQuery, getInsertId } = require("~root/lib/database");
 
 const insertUserById = ({
   userName,
@@ -22,4 +22,4 @@ const insertUserById = ({
   )
 `;
 
-module.exports = camelKeys(insertUserById);
+module.exports = getInsertId(insertUserById);

@@ -56,4 +56,4 @@ VALUES
 (2, 2, 3, 4, "A cozy cottage in the countryside", "Nicosia", 150.00, 3, 2, 5, 300.000),
 (3, 3, 4, 4, "A modern loft in the city center", "Kyrenia", 120.00, 2, 1, 3, 200.000),
 (4, 4, 5, 1, "A luxurious penthouse with a city view", "Omorfou", 250.00, 4, 3, 7, 1.000.000),
-(5, 5, 1, 3, "A charming studio in the city center", "Limassol", 80.00, 1, 1, 2, 15.000.000)
+(5, 5, 1, 3, "A charming studio in the city center", "Limassol", 80.00, 1, 1, 2, 15.000.000);
