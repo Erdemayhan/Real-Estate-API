@@ -108,7 +108,7 @@ router.delete("/property/:propertyId", deletePropertyById); // DONE
 // Filtering
 
 router.get(
-  "/properties/filter/:location/:price/:propertyType",
+  "/properties/filter/:location/:price/:property_types",
   getFilterProperty
 );
 
