@@ -33,6 +33,7 @@ const getAllPasswordsFromUsers = require("./controllers/users/getAllPasswordsFro
 const getPropertyBySizeSqMeters = require("./controllers/properties/getPropertyBySizeSqMeters");
 const postProperty = require("./controllers/properties/postProperty");
 const getPropertyStatuses = require("./controllers/properties/getPropertyStatuses");
+const getFilterProperty = require("./controllers/properties/getFilterProperty");
 
 const router = express.Router();
 
@@ -105,5 +106,10 @@ router.patch("/properties/status/:propertyId", patchPropertyStatusById); // DONE
 router.delete("/property/:propertyId", deletePropertyById); // DONE
 
 // Filtering
+
+router.get(
+  "/properties/filter/:location/:price/:propertyType",
+  getFilterProperty
+);
 
 module.exports = router;
