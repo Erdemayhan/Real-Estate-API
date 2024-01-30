@@ -34,6 +34,7 @@ const getPropertyBySizeSqMeters = require("./controllers/properties/getPropertyB
 const postProperty = require("./controllers/properties/postProperty");
 const getPropertyStatuses = require("./controllers/properties/getPropertyStatuses");
 const getFilterProperty = require("./controllers/properties/getFilterProperty");
+const getFilterForHomePage = require("./controllers/properties/getFilterHomePage");
 
 const router = express.Router();
 
@@ -108,8 +109,13 @@ router.delete("/property/:propertyId", deletePropertyById); // DONE
 // Filtering
 
 router.get(
-  "/properties/filter/:location/:price/:property_types",
+  "/properties/filter/:location/:price/:property_types/:property_statuses/:rooms/:bedrooms/:bathrooms/:sizeSqMeters",
   getFilterProperty
+);
+
+router.get(
+  "/properties/homePageFilter/:location/:price/:property_types",
+  getFilterForHomePage
 );
 
 module.exports = router;

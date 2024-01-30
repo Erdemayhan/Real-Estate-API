@@ -1,13 +1,27 @@
 const selectFilterProperty = require("./queries/selectFilterProperty");
 
-const fetchFilterProperty = async ({ location, price, property_types }) => {
-  const filteredResult = await selectFilterProperty({
+const fetchFilterProperty = async ({
+  location,
+  price,
+  property_types,
+  property_statuses,
+  rooms,
+  bedrooms,
+  bathrooms,
+  sizeSqMeters
+}) => {
+  const propertyMatch = await selectFilterProperty({
     location,
     price,
-    property_types
+    property_types,
+    property_statuses,
+    rooms,
+    bedrooms,
+    bathrooms,
+    sizeSqMeters
   });
 
-  return { filteredResult };
+  return { propertyMatch };
 };
 
 module.exports = fetchFilterProperty;

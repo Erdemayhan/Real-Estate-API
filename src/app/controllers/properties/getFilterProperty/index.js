@@ -2,26 +2,33 @@ const fetchFilterProperty = require("~root/actions/properties/fetchFilterPropert
 const handleAPIError = require("~root/utils/handleAPIError");
 
 const getFilterProperty = async (req, res) => {
-  const { location, price, property_types } = req.params;
+  const {
+    location,
+    price,
+    property_types,
+    property_statuses,
+    rooms,
+    bedrooms,
+    bathrooms,
+    sizeSqMeters
+  } = req.params;
+
   try {
-    const { filteredResult } = await fetchFilterProperty({
+    const { propertyMatch } = await fetchFilterProperty({
       location,
       price,
-      property_types
-    });
-    const FilteredSearch = filteredResult.filter(property => {
-      return (
-        property.location === location &&
-        property.price === price &&
-        property.property_types === property_types
-      );
+      property_types,
+      property_statuses,
+      rooms,
+      bedrooms,
+      bathrooms,
+      sizeSqMeters
     });
     res.status(201).send({
-      FilteredSearch
+      propertyMatch
     });
   } catch (err) {
     handleAPIError(res, err);
   }
 };
-
 module.exports = getFilterProperty;
