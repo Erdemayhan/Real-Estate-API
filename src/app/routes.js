@@ -35,6 +35,7 @@ const postProperty = require("./controllers/properties/postProperty");
 const getPropertyStatuses = require("./controllers/properties/getPropertyStatuses");
 const getFilterProperty = require("./controllers/properties/getFilterProperty");
 const getFilterForHomePage = require("./controllers/properties/getFilterHomePage");
+const getLocations = require("./controllers/properties/getLocations");
 
 const router = express.Router();
 
@@ -85,6 +86,8 @@ router.get("/properties/:typeId", getPropertiesByTypeId); // DONE
 router.get("/properties/status/:statusId", getPropertiesByStatusId); // DONE
 
 router.get("/property/:location", getPropertyByLocation); // DONE
+
+router.get("/locations", getLocations); // DONE
 
 router.get("/properties/rooms/:rooms", getPropertiesByRooms); // DONE
 
