@@ -36,6 +36,7 @@ const getPropertyStatuses = require("./controllers/properties/getPropertyStatuse
 const getFilterProperty = require("./controllers/properties/getFilterProperty");
 const getFilterForHomePage = require("./controllers/properties/getFilterHomePage");
 const getLocations = require("./controllers/properties/getLocations");
+const postUserbyId = require("./controllers/users/postUserById");
 
 const router = express.Router();
 
@@ -55,7 +56,7 @@ router.get("/user_types", getUserTypes); // DONE
 
 router.get("/user-types", getUserTypes); // DONE
 
-router.get("/users", authentication, getUsers); //DONE
+router.get("/users", authentication, getUsers); // DONE
 
 router.get("/user/:userId", getUserById); // DONE
 
@@ -79,7 +80,7 @@ router.get("/users/login/:password", getAllPasswordsFromUsers); // LAZIM DEĞİL
 
 router.post("/users/register", postUserbyId); // DONE
 
-//Properties
+// Properties
 
 router.get("/properties", getAllProperties); // DONE
 

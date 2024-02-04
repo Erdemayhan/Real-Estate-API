@@ -1,4 +1,4 @@
-const createUserById = require("~root/actions/users/createUserById");
+const createUserById = require("~root/actions/users/createUserById/index");
 const handleAPIError = require("~root/utils/handleAPIError");
 
 const postUserbyId = async (req, res) => {
