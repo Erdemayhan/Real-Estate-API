@@ -29,7 +29,6 @@ const patchPropertyStatusById = require("./controllers/properties/patchPropertyS
 const deletePropertyById = require("~root/actions/properties/removeProperty/queries/deletePropertyById");
 const getUserByName = require("./controllers/users/getUserByName");
 const patchAllPasswordsFromUsers = require("./controllers/users/patchAllPasswordFromUsers");
-const getAllPasswordsFromUsers = require("./controllers/users/getAllPasswordsFromUsers");
 const getPropertyBySizeSqMeters = require("./controllers/properties/getPropertyBySizeSqMeters");
 const postProperty = require("./controllers/properties/postProperty");
 const getPropertyStatuses = require("./controllers/properties/getPropertyStatuses");
@@ -75,8 +74,6 @@ router.patch("/users/name/:userId", patchUserByName); // DONE
 router.patch("/users/email/:userId", patchUserByEmail); // DONE
 
 router.patch("/users/newPassword/:userId", patchAllPasswordsFromUsers); // DONE
-
-router.get("/users/login/:password", getAllPasswordsFromUsers); // LAZIM DEĞİL
 
 router.post("/users/register", postUserbyId); // DONE
 
