@@ -17,7 +17,7 @@ const insertUserById = ({
   (
     ${userName},
     ${email},
-    sha2(concat(${password},${process.env.password_salt}), 224),
+    sha2(concat(${password},${process.env.PASSWORD_SALT}), 224),
     ${userTypeId}
   )
 `;
