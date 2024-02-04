@@ -53,7 +53,9 @@ router.put("/edit/user", authentication, putUserDetails);
 // Users
 router.get("/user_types", getUserTypes); // DONE
 
-router.get("/users", getUsers); // DONE
+router.get("/user-types", getUserTypes); // DONE
+
+router.get("/users", authentication, getUsers); //DONE
 
 router.get("/user/:userId", getUserById); // DONE
 
@@ -75,7 +77,9 @@ router.patch("/users/newPassword/:userId", patchAllPasswordsFromUsers); // DONE
 
 router.get("/users/login/:password", getAllPasswordsFromUsers); // LAZIM DEĞİL
 
-// Properties
+router.post("/users/register", postUserbyId); // DONE
+
+//Properties
 
 router.get("/properties", getAllProperties); // DONE
 
