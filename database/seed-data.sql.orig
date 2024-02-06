@@ -42,15 +42,15 @@ VALUES
 
 INSERT INTO users (user_id, username, email, password, user_type_id, created_at)
 VALUES 
-(1, "Erdem Ayhan", "ayhanerdem510@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 1, "2023-12-16 12:00:00"),
-(2, "Hazan Serifli", "hazanserifli@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 3, "2023-12-16 12:00:00"),
-(3, "Faruk Sertbay", "faruktsertbay@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 3, "2023-12-16 12:00:00"),
-(4, "Ahmet Akinsel", "ahmet@akinsql.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
-(5, "Muhammed Rajab", "rajabM@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
-(6, "John Doe", "johndoe@example.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
-(7, "Fazile Sururi", "fazilesururi@example.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
+(1, "Erdem Ayhan", "ayhanerdem510@gmail.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 1, "2023-12-16 12:00:00"),
+(2, "Hazan Serifli", "hazanserifli@gmail.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 3, "2023-12-16 12:00:00"),
+(3, "Faruk Sertbay", "faruktsertbay@gmail.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 3, "2023-12-16 12:00:00"),
+(4, "Ahmet Akinsel", "ahmet@akinsql.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 2, "2023-12-16 12:00:00"),
+(5, "Muhammed Rajab", "rajabM@gmail.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 2, "2023-12-16 12:00:00"),
+(6, "John Doe", "johndoe@example.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 2, "2023-12-16 12:00:00"),
+(7, "Fazile Sururi", "fazilesururi@example.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 2, "2023-12-16 12:00:00"),
 <<<<<<< HEAD
-(8, "Ali Devecioglu", "alidevecioglu@example.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00");
+(8, "Ali Devecioglu", "alidevecioglu@example.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 2, "2023-12-16 12:00:00");
 
 
 INSERT INTO properties (property_id, user_id, property_type_id,  property_status_id, description, location, size_sq_meters, no_of_bedrooms, no_of_bathrooms, no_of_rooms, price, listed_date)
@@ -64,7 +64,7 @@ VALUES
 (7, 7, 7, 3, "A luxurious penthouse in the city center", "Gönyeli", 150.00, 2, 2, 4, 750000, "2020-12-16"),
 (8, 8, 8, 1, "A spacious dormitory near the university", "Lefke", 100.00, 1, 1, 1, 100000, "2019-12-16");
 =======
-(8, "Ali Devecioğlu", "alidevecioglu@example.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00");
+(8, "Ali Devecioğlu", "alidevecioglu@example.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 2, "2023-12-16 12:00:00");
 
 
 
