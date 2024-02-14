@@ -3,7 +3,7 @@ const fetchUser = require("~root/actions/users/fetchUser");
 
 const login = async (req, res) => {
   const { email, password } = req.body;
-
+  console.log(req.body);
   const { user } = await fetchUser({ email, password });
 
   if (user) {
