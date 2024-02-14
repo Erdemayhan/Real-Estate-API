@@ -42,11 +42,11 @@ VALUES
 
 INSERT INTO users (user_id, username, email, password, user_type_id, created_at)
 VALUES 
-(1, "Erdem Ayhan", "ayhanerdem510@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 1, "2023-12-16 12:00:00"),
-(2, "Hazan Serifli", "hazanserifli@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 3, "2023-12-16 12:00:00"),
-(3, "Faruk Sertbay", "faruktsertbay@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 3, "2023-12-16 12:00:00"),
-(4, "Ahmet Akinsel", "ahmet@akinsql.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00"),
-(5, "Muhammed Rajab", "rajabM@gmail.com", SHA2(CONCAT("password","SUPER_DUPER_SECRET"), 256), 2, "2023-12-16 12:00:00");
+(1, "Erdem Ayhan", "ayhanerdem510@gmail.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 1, "2023-12-16 12:00:00"),
+(2, "Hazan Serifli", "hazanserifli@gmail.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 3, "2023-12-16 12:00:00"),
+(3, "Faruk Sertbay", "faruktsertbay@gmail.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 3, "2023-12-16 12:00:00"),
+(4, "Ahmet Akinsel", "ahmet@akinsql.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 2, "2023-12-16 12:00:00"),
+(5, "Muhammed Rajab", "rajabM@gmail.com", SHA2(CONCAT("password","SECRET_SALT"), 224), 2, "2023-12-16 12:00:00");
 
 
 -- Inserting rows into properties (Assuming property_id is auto-incremented and removed it from the statements)

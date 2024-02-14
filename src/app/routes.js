@@ -42,20 +42,14 @@ const router = express.Router();
 // USER MANAGEMENT
 router.post("/login", postLogin);
 
-router.post(
-  "/register",
-  authentication,
-  authorise({ roles: [ADMIN] }),
-  postUser
-);
+router.post("/register", postUser);
+
 router.put("/edit/user", authentication, putUserDetails);
 
 // Users
 router.get("/user_types", getUserTypes); // DONE
 
-router.get("/user-types", getUserTypes); // DONE
-
-router.get("/users", authentication, getUsers); // DONE
+router.get("/users", getUsers); // DONE
 
 router.get("/user/:userId", getUserById); // DONE
 
@@ -74,8 +68,6 @@ router.patch("/users/name/:userId", patchUserByName); // DONE
 router.patch("/users/email/:userId", patchUserByEmail); // DONE
 
 router.patch("/users/newPassword/:userId", patchAllPasswordsFromUsers); // DONE
-
-router.post("/users/register", postUserbyId); // DONE
 
 // Properties
 
